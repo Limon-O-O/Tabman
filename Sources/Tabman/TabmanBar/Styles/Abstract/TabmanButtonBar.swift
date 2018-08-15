@@ -37,31 +37,50 @@ internal class TabmanButtonBar: TabmanBar {
     internal var horizontalMarginConstraints = [NSLayoutConstraint]()
     internal var edgeMarginConstraints = [NSLayoutConstraint]()
     
+    private var isAnimatingFocussedButton: Bool = false
     internal var focussedButton: UIButton? {
         didSet {
             guard focussedButton !== oldValue else {
                 return
             }
             
-            focussedButton?.setTitleColor(self.selectedColor, for: .normal)
-            focussedButton?.tintColor = self.selectedColor
-            oldValue?.setTitleColor(self.color, for: .normal)
-            oldValue?.tintColor = self.color
+            let update = {
+                self.focussedButton?.setTitleColor(self.selectedColor, for: .normal)
+                self.focussedButton?.tintColor = self.selectedColor
+                self.focussedButton?.titleLabel?.font = self.selectedTextFont
+                oldValue?.setTitleColor(self.color, for: .normal)
+                oldValue?.tintColor = self.color
+                oldValue?.titleLabel?.font = self.textFont
+            }
+            
+            // If animating between buttons then dont use a transition - only for scroll events
+            if isAnimatingFocussedButton {
+                update()
+            } else {
+                guard let transitionView = focussedButton ?? oldValue else {
+                    update()
+                    return
+                }
+                UIView.transition(with: transitionView, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                    update()
+                }, completion: nil)
+            }
         }
     }
     
     public var textFont: UIFont = Appearance.defaultAppearance.text.font! {
         didSet {
-            guard textFont != oldValue else {
-                return
-            }
-            
-            self.updateButtons(update: { (button) in
+            updateButtons { (button) in
                 button.titleLabel?.font = textFont
-            })
+            }
         }
     }
-    
+    public var selectedTextFont: UIFont = Appearance.defaultAppearance.text.font! {
+        didSet {
+            focussedButton?.titleLabel?.font = selectedTextFont
+        }
+    }
+
     public var color: UIColor = Appearance.defaultAppearance.state.color!
     public var selectedColor: UIColor = Appearance.defaultAppearance.state.selectedColor!
   
@@ -156,6 +175,9 @@ internal class TabmanButtonBar: TabmanBar {
         let textFont = appearance.text.font
         self.textFont = textFont ?? defaultAppearance.text.font!
         
+        let selectedTextFont = appearance.text.selectedFont
+        self.selectedTextFont = selectedTextFont ?? self.textFont
+
         let itemVerticalPadding = appearance.layout.itemVerticalPadding
         self.itemVerticalPadding = itemVerticalPadding ?? defaultAppearance.layout.itemVerticalPadding!
         
@@ -273,7 +295,10 @@ internal class TabmanButtonBar: TabmanBar {
     
     @objc internal func tabButtonPressed(_ sender: UIButton) {
         if let index = self.buttons.index(of: sender), (self.responder?.bar(self, shouldSelectItemAt: index) ?? true) {
-            self.responder?.bar(self, didSelectItemAt: index)
+            isAnimatingFocussedButton = true
+            responder?.bar(self, didSelectItemAt: index, completion: {
+                self.isAnimatingFocussedButton = false
+            })
         }
     }
     

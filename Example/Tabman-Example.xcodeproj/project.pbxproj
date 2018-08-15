@@ -240,7 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				D6C759751E83CFA300471973 /* Tabman.framework */,
-				46DFB8D92007CA3F00D79F44 /* Tabman_Carthage.framework */,
+				46DFB8D92007CA3F00D79F44 /* Tabman.framework */,
 				D6C759771E83CFA300471973 /* TabmanTests.xctest */,
 			);
 			name = Products;
@@ -258,7 +258,6 @@
 				D62AC0D21E5733A80020B8AE /* Frameworks */,
 				D62AC0D31E5733A80020B8AE /* Resources */,
 				929BA799898F5D4EE9225DE1 /* [CP] Embed Pods Frameworks */,
-				D3DA957B2EFFB61B1D76DF8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,7 +275,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "UI At Six";
 				TargetAttributes = {
 					D62AC0D41E5733A80020B8AE = {
@@ -311,10 +310,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		46DFB8D92007CA3F00D79F44 /* Tabman_Carthage.framework */ = {
+		46DFB8D92007CA3F00D79F44 /* Tabman.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = Tabman_Carthage.framework;
+			path = Tabman.framework;
 			remoteRef = 46DFB8D82007CA3F00D79F44 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -366,21 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D3DA957B2EFFB61B1D76DF8A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Tabman-Example/Pods-Tabman-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE7713597E46317E0CA21A5E /* [CP] Check Pods Manifest.lock */ = {
@@ -468,6 +452,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -475,6 +460,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -523,6 +509,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -530,6 +517,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

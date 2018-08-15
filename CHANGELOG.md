@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
+- `1.9.x` Releases - [1.9.0](#190) | [1.9.1](#191) | [1.9.2](#192)
+- `1.8.x` Releases - [1.8.0](#180) | [1.8.1](#181) | [1.8.2](#182)
+- `1.7.x` Releases - [1.7.0](#170)
 - `1.6.x` Releases - [1.6.0](#160)
 - `1.5.x` Releases - [1.5.0](#150) | [1.5.1](#151) | [1.5.2](#152)
 - `1.4.x` Releases - [1.4.0](#140) 
@@ -17,6 +20,77 @@ All notable changes to this project will be documented in this file.
 - `0.6.x` Releases - [0.6.0](#060) | [0.6.1](#061) | [0.6.2](#062)
 - `0.5.x` Releases - [0.5.0](#050) | [0.5.1](#051) | [0.5.2](#052) | [0.5.3](#053)
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
+
+---
+## [1.9.2](https://github.com/uias/Tabman/releases/tag/1.9.2)
+Released on 2018-08-02
+
+#### Fixed
+- [#314](https://github.com/uias/Tabman/issues/314) Scrolling Button Bar does not re-layout on rotation for .fill Item Distribution
+    - by [rzulkoski](https://github.com/rzulkoski)
+
+## [1.9.1](https://github.com/uias/Tabman/releases/tag/1.9.1)
+Released on 2018-06-20
+
+#### Fixed
+- [#296](https://github.com/uias/Tabman/pull/296) Visual bug when scrolling between bar buttons with different font styles.
+    - by [rzulkoski](https://github.com/rzulkoski)
+
+## [1.9.0](https://github.com/uias/Tabman/releases/tag/1.9.0)
+Released on 2018-06-05
+
+#### Added
+- [#291](https://github.com/uias/Tabman/issues/291) Fill Item Distribution for Scrolling Button Bar.
+    - by [rzulkoski](https://github.com/rzulkoski)
+
+---
+## [1.8.2](https://github.com/uias/Tabman/releases/tag/1.8.2)
+Released on 2018-04-18
+
+#### Fixed
+- [#276](https://github.com/uias/Tabman/issues/276) Animation issue where whole bar would crossfade during an interactive transition.
+    - by [msaps](https://github.com/msaps).
+
+## [1.8.1](https://github.com/uias/Tabman/releases/tag/1.8.1)
+Released on 2018-04-12
+
+#### Updated
+- Improved animation when interactively transitioning between items with a `selectedFont`.
+    - by [msaps](https://github.com/msaps).
+- `selectedFont` now defaults to `font` if no custom value is set when used in button bars.
+    - by [msaps](https://github.com/msaps).
+
+#### Fixed
+- [#273](https://github.com/uias/Tabman/issues/273) ssue where selectedTextFont would incorrectly be used for every item in a button bar when not selected.
+    - by [msaps](https://github.com/msaps).
+
+## [1.8.0](https://github.com/uias/Tabman/releases/tag/1.8.0)
+Released on 2018-04-06
+
+#### Updated
+- Now using Pageboy [2.5](https://github.com/uias/Pageboy/releases/tag/2.5.0) with fixes to scroll detection and reliability.
+    - by [msaps](https://github.com/msaps). 
+
+---
+
+## [1.7.0](https://github.com/uias/Tabman/releases/tag/1.7.0)
+Released on 2018-04-02
+
+#### Added
+- `.bottomSeparator` configuration to `TabmanBar.Appearance`.
+    - by [msaps](https://github.com/msaps).
+- Ability to customize separator height via `Appearance.bottomSeparator.height`.
+    - by [leah](https://github.com/leah) & [msaps](https://github.com/msaps).
+- Ability to specifiy a selected font for bar items via `Appearance.text.selectedFont`.
+    - by [moaible](https://github.com/moaible) & [leah](https://github.com/leah).
+
+#### Updated
+- Deprecated `Appearance.State.shouldHideWhenSingleItem`.
+    - by [msaps](https://github.com/msaps).
+- Deprecated `Appearance.Style.bottomSeparatorColor`.
+    - by [msaps](https://github.com/msaps).
+- Deprecated `Appearance.Layout.bottomSeparatorEdgeInsets`.
+    - by [msaps](https://github.com/msaps).
 
 ---
 
